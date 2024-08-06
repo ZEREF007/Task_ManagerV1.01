@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #b25013, #88d3ce);
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.glass-box {
+    position: relative; /* Ensure the glass box is positioned relative for bubble positioning */
+    width: 350px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e62e05;
+    text-align: center;
+}
+
+.glass-box::before, .glass-box::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3); /* Lighter shade for bubbles */
+    width: 85px; /* Size of the bubbles */
+    height: 85px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    pointer-events: none; /* Ensure bubbles don’t interact with the mouse */
+    animation: glow 1s infinite alternate;
+}
+
+.glass-box::before {
+    top: -30px;
+    left: -30px;
+}
+
+.glass-box::after {
+    bottom: -30px;
+    right: -30px;
+}
+
+@keyframes glow {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+.glass-box h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+#add-task-btn {
+    width: 20%;
+    padding: 10px;
+    border-radius: 0 20px 20px 0;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(230, 79, 28);
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#add-task-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    box-shadow: 0 4px 16px rgba(31, 38, 135, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-bottom: 17px;
+    color: rgb(14, 1, 1);
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+#task-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    color: #ffff;
+    font-weight: bold;
+}
+
+#task-list li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#task-list li .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#task-list li .actions button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#task-list li .actions button:hover {
+    color: #d10404;
+}
+
+/* Edit and delete icons styling */
+#task-list li .actions i {
+    font-size: 18px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#task-count {
+    font-size: 18px;
+    padding-left: 5px;
+    font-weight: bold;
+    color: teal;
+}
+
+#clear-tasks-btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background: teal;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#clear-tasks-btn:hover {
+    background: linear-gradient(135deg, #ff512f, #e94057);
+}
+

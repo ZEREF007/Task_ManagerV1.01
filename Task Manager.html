@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+    
+        <div class="glass-box">
+            <h1>Task Manager 🥰 </h1>
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="Add a New Task">
+                <button id="add-task-btn">+</button>
+            </div>
+            <ul id="task-list"></ul>
+            <div class="footer">
+                <span id="task-count">0 Task Left</span>
+                <button id="clear-tasks-btn">Clear All</button>
+            </div>
+        </div>
+        <div id="fireworks-container"></div>
+    </div>
+    <div class="bubbles-container">
+        <div class="bubble" id="bubble1"></div>
+        <div class="bubble" id="bubble2"></div>
+        <div class="bubble" id="bubble3"></div>
+        <div class="bubble" id="bubble4"></div>
+        <div class="bubble" id="bubble5"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
