@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let editTaskItem = null;
 
-    // Load tasks from local storage
+    // Load tasks from local storage if any or initializes a empty array
     const loadTasks = () => {
         const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         tasks.forEach(task => {
